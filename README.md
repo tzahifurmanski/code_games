@@ -1,2 +1,2 @@
 # code_games
-A repo for some exercises
+A repo for some exercises.
