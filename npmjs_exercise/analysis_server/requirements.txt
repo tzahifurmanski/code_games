@@ -1,3 +1,5 @@
+gunicorn
 Django
 djangorestframework
 requests
+django-heroku

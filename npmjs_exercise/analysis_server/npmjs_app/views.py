@@ -3,9 +3,9 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from http import HTTPStatus
 
-from dependency_resolving.dependencies_cache import DependenciesCache
-from dependency_resolving.dependency_mapper import DependencyMapper
-from dependency_resolving.npmjs_client import NPMJSClient, PackageNotFound
+from npmjs_app.dependency_resolving.dependencies_cache import DependenciesCache
+from npmjs_app.dependency_resolving.dependency_mapper import DependencyMapper
+from npmjs_app.dependency_resolving.npmjs_client import NPMJSClient, PackageNotFound
 
 
 class DependencyTreeView(APIView):
