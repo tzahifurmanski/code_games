@@ -34,7 +34,8 @@ class DependencyMapper:
 
         dependencies_queue = Queue()
         total_num_of_dependencies = 0
-        root_package = self._create_package_dict(name, version)
+
+        root_package = self._create_package_dict(name, self._get_explicit_version(version))
         dependencies_queue.put(root_package)
 
         while not dependencies_queue.empty():

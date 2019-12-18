@@ -18,15 +18,21 @@ class DependencyTreeView(APIView):
     # If packages resolving takes too much time, we can add the ability to query asynchronously -
     #  in this case, return an id for a query request, and an api to get the request status/results.
     # noinspection PyUnusedLocal
-    def get(self, request, name):
+    def get(self, request, name, version):
         if not name:
             raise ValidationError("Missing package name")
+        if not version:
+            raise ValidationError("Missing package version")
 
         try:
             # I assume latest since exercise did not specify sending a version
-            result = self.mapper.get_dependencies_tree_for_package(name, 'latest')
+            result = self.mapper.get_dependencies_tree_for_package(name, version)
+            if not result:
+                return Response(status=HTTPStatus.NOT_FOUND,
+                                data="Not dependencies were found for package {} and version {}".format(name, version))
+
         except PackageNotFound:
-            return Response(status=HTTPStatus.NOT_FOUND, data="Package {} was not found".format(name))
+            return Response(status=HTTPStatus.NOT_FOUND, data="Package {} with version {}, was not found".format(name, version))
 
         return Response(result)
 
