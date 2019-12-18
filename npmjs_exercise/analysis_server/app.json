@@ -1,7 +1,0 @@
-{
-  "name": "NPMJS Exercise",
-  "description": "An exercise working for querying packages from NPMJS.",
-  "image": "heroku/python",
-  "repository": "https://github.com/tzahifurmanski/code_games",
-  "keywords": ["python", "django" ]
-}
