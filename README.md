@@ -23,7 +23,5 @@ Optional - a venv is a very convenient way to manage multiple python projects
 
 
 ## Setup the project
-
-* Browse to the project's main dir using `cd npmjs_exercise/analysis_server/`
-* Install the required packages using `pip3 install -r requirements.txt`
+* From the project's main dir, install the required packages using `pip3 install -r requirements.txt`
 * Run the server `python3 manage.py runserver`
